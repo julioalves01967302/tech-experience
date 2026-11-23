@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscrição | Tech Experience 2026</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <a class="skip" href="#conteudo">Pular para o conteúdo</a>
+    <header class="header"><div class="header-inner">
+        <a class="brand" href="index.html"><span class="mark" aria-hidden="true">&lt;/&gt;</span><span>TECH EXPERIENCE<small>2026</small></span></a>
+        <span class="tag">Evento acadêmico</span>
+    </div></header>
+    <main id="conteudo" class="layout">
+        <section class="intro" aria-labelledby="titulo-evento">
+            <p class="eyebrow">DESENVOLVIMENTO WEB · 2026</p>
+            <h1 id="titulo-evento">O próximo passo da sua jornada em tecnologia.</h1>
+            <p>Aprenda na prática e explore novas habilidades nas oficinas técnicas do Tech Experience.</p>
+            <div class="fact"><b>03</b><div><strong>Oficinas de desenvolvimento web</strong><p>Escolha uma ou mais atividades de seu interesse.</p></div></div>
+            <div class="fact"><b>02</b><div><strong>Turnos disponíveis</strong><p>Selecione manhã ou noite.</p></div></div>
+        </section>
+        <section class="panel" aria-labelledby="titulo-formulario">
+            <p class="eyebrow">INSCRIÇÃO NO EVENTO</p>
+            <h2 id="titulo-formulario">Garanta sua participação</h2>
+            <p class="description">Preencha os dados abaixo. Campos com * são obrigatórios.</p>
+            <form id="form-inscricao" action="processar.php" method="post">
+                <div class="field">
+                    <label for="nome">Nome completo *</label>
+                    <input type="text" id="nome" name="nome" required minlength="3" autocomplete="name" placeholder="Digite seu nome completo">
+                </div>
+                <div class="field">
+                    <label for="email">E-mail *</label>
+                    <input type="email" id="email" name="email" required autocomplete="email" placeholder="nome@exemplo.com">
+                </div>
+                <div class="field">
+                    <label for="experiencia">Nível de experiência *</label>
+                    <select id="experiencia" name="experiencia" required>
+                        <option value="" disabled selected>Selecione seu nível</option>
+                        <option value="iniciante">Iniciante</option>
+                        <option value="intermediario">Intermediário</option>
+                        <option value="avancado">Avançado</option>
+                    </select>
+                </div>
+                <fieldset class="field">
+                    <legend>Turno de preferência *</legend>
+                    <div class="turnos">
+                        <label class="choice" for="manha"><input type="radio" id="manha" name="turno" value="manha" required> Manhã</label>
+                        <label class="choice" for="noite"><input type="radio" id="noite" name="turno" value="noite"> Noite</label>
+                    </div>
+                </fieldset>
+                <fieldset class="field" id="grupo-oficinas" aria-describedby="oficinas-ajuda oficinas-erro">
+                    <legend>Oficinas de interesse *</legend>
+                    <p class="help" id="oficinas-ajuda">Selecione pelo menos uma oficina.</p>
+                    <div class="workshops">
+                        <label class="choice" for="html_css"><input type="checkbox" id="html_css" name="oficinas[]" value="html_css" aria-describedby="oficinas-ajuda oficinas-erro"><span><strong>HTML5 e CSS3</strong><small>Estrutura, estilo e responsividade.</small></span></label>
+                        <label class="choice" for="js_dom"><input type="checkbox" id="js_dom" name="oficinas[]" value="js_dom" aria-describedby="oficinas-ajuda oficinas-erro"><span><strong>JavaScript e DOM</strong><small>Interatividade e manipulação de páginas.</small></span></label>
+                        <label class="choice" for="php_backend"><input type="checkbox" id="php_backend" name="oficinas[]" value="php_backend" aria-describedby="oficinas-ajuda oficinas-erro"><span><strong>PHP Backend</strong><small>Formulários, processamento e segurança.</small></span></label>
+                    </div>
+                    <p class="error-message" id="oficinas-erro" role="alert"></p>
+                </fieldset>
+                <div class="field">
+                    <label for="mensagem">Mensagem / Motivação <span class="optional">(opcional)</span></label>
+                    <textarea id="mensagem" name="mensagem" maxlength="200" rows="4" aria-describedby="contador" placeholder="O que você espera aprender no evento?"></textarea>
+                    <p class="counter" id="contador" aria-live="polite">Restam 200 caracteres</p>
+                </div>
+                <button class="button" type="submit">Confirmar inscrição <span aria-hidden="true">→</span></button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <div>Tech Experience 2026 · Desenvolvimento Web</div>
+        <div class="autoria">Desenvolvido por Júlio César Alves da Silva<br>
+            Matrícula: 202508389401 · UNIFAVIP · 2026.2</div>
+    </footer>
+</body>
+</html>
