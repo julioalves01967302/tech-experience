@@ -1,1 +1,1 @@
-# tech-experience.
+# tech-experience
